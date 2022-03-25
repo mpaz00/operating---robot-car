@@ -13,7 +13,7 @@ float v=1.2;
 int rv;
 char cmd;
 void setup() {
-  // put your setup code here, to run once:
+  
 Serial.begin(9600);
 
 
@@ -29,8 +29,6 @@ digitalWrite(ENB,HIGH);
 
 void loop() {
 int wv;
-//v=1.2;
-//d=1;
 wv=(v-.35)/.0075;
 left=wv;
 right=wv;
@@ -54,7 +52,6 @@ if (cmd=='L'){
   Serial.println("Left");
   turnLeft(degRot,wv);  
 }
-//If Command Was Pound, Set Distance
 if (cmd=='d'){
   Serial.println("Set distance");
   delay(500);
@@ -101,7 +98,6 @@ cmd=Serial.read();
   }
 }
 
-//If Command Was star, Set Speed
 if (cmd=='v'){
   Serial.println("Set speed");
   delay(500);
